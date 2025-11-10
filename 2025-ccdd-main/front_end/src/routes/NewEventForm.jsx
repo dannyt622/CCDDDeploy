@@ -201,8 +201,6 @@ export default function NewEventForm() {
         if (!latestEvent) return;
         setForm((prev) => ({
           ...prev,
-          initialExposureTime:
-            latestEvent.initialExposureTime || latestEvent.firstOnset || prev.initialExposureTime,
           riskSubstanceName:
             latestEvent.riskSubstanceName || latestEvent.substanceName || prev.riskSubstanceName,
           verificationStatus:
