@@ -521,7 +521,7 @@ export async function createEvent(patientId, payload) {
 
     invalidateEventCache(ai.id);
 
-    return { id: `${ai.id}#${(ai.reaction || []).length}`, substanceId: ai.id };
+    return { id: `${ai.id}#${(ai.reaction || []).length}`, substanceId: ai.id, patientId: targetPatientId };
   }
 
   if (!ai) {

@@ -430,8 +430,9 @@ export default function NewEventForm() {
         reactionOnsetDescription: reactionOnset
       };
       const created = await createEvent(patientId, payload);
+      const resolvedPatientId = created?.patientId || patientId;
       setExpandedSubstance(created.substanceId);
-      navigate(`/patients/${patientId}/allergies`);
+      navigate(`/patients/${resolvedPatientId}/allergies`);
     } finally {
       setSaving(false);
     }
